@@ -43,3 +43,19 @@
 ![hibernateCfgConfigXMLFile](imagePool/hibernateCfgConfigXMLFile.png)
         
 
+
+4. 数据库操作步骤
+
+添加一条数据 (7 steps)
+![dbAddOperation](imagePool/dbAddOperation.png)
+
+
+
+5. Hibernate reverse engineer -- 根据数据表生成映射文件和实体类
+
+        - 需要手动添加 id gernerator strategy 
+
+![persistenceToolReverseEngineerOjbAndOrmMapping](imagePool/persistenceToolReverseEngineerOjbAndOrmMapping.png)
+
+![configReverseEngineerObjAndOrmMapping](imagePool/configReverseEngineerObjAndOrmMapping.png)
+
