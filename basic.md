@@ -59,3 +59,19 @@
 
 ![configReverseEngineerObjAndOrmMapping](imagePool/configReverseEngineerObjAndOrmMapping.png)
 
+
+
+6. HQL - Hibernate Query Language
+
+
+        - 1) Find All
+![hqlFindAll](imagePool/hqlFindAll.png)
+
+       - 2) Find By Pagination
+![findByPagination](imagePool/findByPagination.png)
+
+       - 3) Conditional Query By Index
+![conditionalFindByIndex](imagePool/conditionalFindByIndex.png)
+       
+       - 4) Conditional Query By Name
+![conditionalFindByName](imagePool/conditionalFindByName.png)
