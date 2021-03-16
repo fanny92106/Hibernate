@@ -88,3 +88,48 @@
 
 对比 getCurrentSession() 和 openSession(), 同线程中开启的getCurrentSession() 是相同的
 ![getCurrentSession](imagePool/getCurrentSession.png)
+
+
+
+
+8. 级联操作 (一对多/ 多对一) -- (book -> bookType)
+
+        step1: reverse-engineer from db to create Java class & mapping config file
+            
+![manyToOneTableImport](imagePool/manyToOneTableImport.png)
+
+       step2: Java class & mapping config file
+           
+bookInfo: 
+![manyToOneJavaClass](imagePool/manyToOneJavaClass.png)
+
+bookInfo-mapping:
+![manyToOneMapping](imagePool/manyToOneMapping.png)
+
+bookType:
+![oneToManyJavaClass](imagePool/oneToManyJavaClass.png)
+
+bookType-mapping:
+![oneToManyMapping](imagePool/oneToManyMapping.png)
+
+
+        step3: 测试
+            a. 常用的级联操作: 
+                1) 级联查询 (One-to-Many, Many-to-One)
+                    默认lazy="true"：关联表的信息默认是延迟加载的）
+![getCascadeObjDuringSession](imagePool/getCascadeObjDuringSession.png)
+
+![getCascadeObjAfterSessionClosed](imagePool/getCascadeObjAfterSessionClosed.png)
+                                                            
+            b. 建议各自表单进行的操作
+                1) 添加操作 (尤其指在Many一方添加数据，设置One方数据时需要从One方先获取 或 先创建，再添加)
+![addDataFromManySide](imagePool/addDataFromManySide.png)
+                        
+                2) 更新操作
+
+            c. 不建议的操作 error-prone and dangerous!!!
+                1) 级联更新
+                2) 级联删除
+
+
+
