@@ -75,3 +75,16 @@
        
        - 4) Conditional Query By Name
 ![conditionalFindByName](imagePool/conditionalFindByName.png)
+
+
+
+7. 支持事务下的本地线程绑定
+
+        - sessionFactory.getCurrentSession() --> 多线程安全, 多线程环境下传递session, 但必须开启事务，哪怕是查询操作
+        - sessionFactory.openSession() --> 多线程不安全
+        
+配置
+![bindSessionToLocalThreadConfig](imagePool/bindSessionToLocalThreadConfig.png)
+
+对比 getCurrentSession() 和 openSession(), 同线程中开启的getCurrentSession() 是相同的
+![getCurrentSession](imagePool/getCurrentSession.png)
