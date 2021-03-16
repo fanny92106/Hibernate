@@ -116,11 +116,14 @@ bookType-mapping:
         step3: 测试
             a. 常用的级联操作: 
                 1) 级联查询 (One-to-Many, Many-to-One)
-                    默认lazy="true"：关联表的信息默认是延迟加载的）
+                默认lazy="true"：关联表的信息默认是延迟检索的，session关闭后无法访问级联表的属性
 ![getCascadeObjDuringSession](imagePool/getCascadeObjDuringSession.png)
 
 ![getCascadeObjAfterSessionClosed](imagePool/getCascadeObjAfterSessionClosed.png)
-                                                            
+         
+                    设置级联表立即检索, 检索后即使session关闭后，也可以继续访问级联表的属性
+![setInstantLoadCascadeTable](imagePool/setInstantLoadCascadeTable.png)
+
             b. 建议各自表单进行的操作
                 1) 添加操作 (尤其指在Many一方添加数据，设置One方数据时需要从One方先获取 或 先创建，再添加)
 ![addDataFromManySide](imagePool/addDataFromManySide.png)
@@ -132,4 +135,12 @@ bookType-mapping:
                 2) 级联删除
 
 
+9. 检索方式
+    
+        - 立即检索 (执行完查询语句后，立即查询数据库)
+        单表get()方法查询
+![instantLoad](imagePool/instantLoad.png)
 
+        - 延迟检索 (执行完查询语句后，在需要时才查数据库，也叫懒加载)
+        单表load()方法查询
+![lazyLoad](imagePool/lazyLoad.png)
