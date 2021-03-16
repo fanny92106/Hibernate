@@ -144,3 +144,16 @@ bookType-mapping:
         - 延迟检索 (执行完查询语句后，在需要时才查数据库，也叫懒加载)
         单表load()方法查询
 ![lazyLoad](imagePool/lazyLoad.png)
+
+
+
+10. POJO 状态
+
+        1) 瞬时态
+            - 没有OID(主键)，没有被session管理
+        2) 持久层态
+            - 有OID(主键), 被session管理
+        3) 游离态
+            - 有OID(主键), 不被session管理
+            
+![POJOStates](imagePool/POJOStates.png)
