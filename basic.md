@@ -157,3 +157,19 @@ bookType-mapping:
             - 有OID(主键), 不被session管理
             
 ![POJOStates](imagePool/POJOStates.png)
+
+
+
+11. 一级缓存
+    
+        - session 级别的缓存，同session works
+![levelOneCache](imagePool/levelOneCache.png)
+
+
+
+12. 二级缓存
+    
+        - sessionFactory 级别缓存，用于session 之间共享数据
+        - 缺陷: 无法缓存非对象; 对级联的支持不足；不支持条件查询 (where)
+![levelTwoCache](imagePool/levelTwoCache.png)
+
